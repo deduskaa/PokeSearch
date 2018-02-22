@@ -18,7 +18,7 @@ class TypeFilters extends Component {
 
   getTypes = () => {
     caches.open('types').then( cache => {
-      let url = 'http://pokeapi.salestock.net/api/v2/type/'
+      let url = 'https://cors.now.sh/https://pokeapi.co/api/v2/type/'
       let request = new Request(url);
       cache.match(request).then( response => { // Check if there is existing data in cache
         if(response === undefined) {
