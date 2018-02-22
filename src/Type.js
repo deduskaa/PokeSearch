@@ -7,7 +7,7 @@ class Type extends Component {
     event.persist();
     let cacheStorage = `${event.target.id}-type-pokemons`;
     caches.open(cacheStorage).then( cache => {
-      let url = 'https://cors.now.sh/https://pokeapi.co/api/v2/type/' + event.target.id;
+      let url = 'https://pokeapi.co/api/v2/type/' + event.target.id;
       let request = new Request(url);
       cache.match(request).then( response => { // Check if there is existing data in cache
         if(response === undefined) {

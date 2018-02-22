@@ -54,7 +54,8 @@ class App extends Component {
   }
 
   setAdditionalPokemonData = (data, pokemon) => {
-    pokemon.genus = data.genera[0]['genus'];
+    console.log(data);
+    pokemon.genus = data.genera[2]['genus'];
     //Loop through descriptions and search for the first english one
     for (let i = 0; i < data['flavor_text_entries'].length; i++) {
       if (data['flavor_text_entries'][i]['language']['name'] === 'en') {
