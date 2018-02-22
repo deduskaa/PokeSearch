@@ -67,7 +67,7 @@ class App extends Component {
 
 
   searchPokemon = (pokemonID) => {
-    let url = "https://cors.now.sh/https://pokeapi.co/api/v2/pokemon/" + pokemonID;
+    let url = "https://pokeapi.co/api/v2/pokemon/" + pokemonID;
     this.setState({loading: true});
 
     caches.open('pokemon').then( cache => {
