@@ -12,6 +12,7 @@ class Card extends Component {
   }
 
   settingType = function(pokemonData) {
+    console.log(pokemonData);
     let typeDiv;
     if (pokemonData) {
       let types = pokemonData.types;
@@ -34,24 +35,32 @@ class Card extends Component {
   }
 
   addToList = () => {
-
+    localStorage.setItem("pokemon", JSON.stringify(this.props.pokemonInfo));
   }
 
   render() {
     let pokemonData = this.props.pokemonInfo;
+    let backBtn = <button onClick={() => {
+          this.props.callbackFromParent(pokemonData.pokemon_id - 1);
+        }} className="Card-btnNav Card-btnBack">
+        <FontAwesome name="caret-left" size="3x" />
+      </button>;
 
-    return (
-      <div className="Card-container">
-        <button onClick={() => {this.props.callbackFromParent(pokemonData.pokemon_id-1)}} className="Card-btnNav Card-btnBack"><FontAwesome name="caret-left"  size="3x"/></button>
+    return <div className="Card-container">
+        {pokemonData.pokemon_id === 1 ? "" : backBtn}
         <div className="Card">
-          <button onClick={() => {this.addToList()}} className="Card-btnAddToList"><FontAwesome name="plus"/></button>
+          <button onClick={() => {
+              this.addToList();
+            }} className="Card-btnAddToList">
+            <FontAwesome name="plus" />
+          </button>
           <div ref="Card--title-container" className={`Card--title-container ${pokemonData.types[0]}`}>
             <p className="Card-id">#{pokemonData.pokemon_id}</p>
             <h2 className="Card-title">{pokemonData.pokemon} </h2>
             <p className="Card-genus"> - {pokemonData.genus} Pokemon</p>
           </div>
           <div className="Card--image-container">
-            <img src={pokemonData.picture} alt={pokemonData.pokemon}/>
+            <img src={pokemonData.picture} alt={pokemonData.pokemon} />
           </div>
           <ul className="Card--stats-container">
             {this.settingStats(pokemonData)}
@@ -59,15 +68,23 @@ class Card extends Component {
           <div className="Card--type-container">
             {this.settingType(pokemonData)}
           </div>
-
+          <div className="Card-additional-info-container">
+            <li>Height: {pokemonData.height}</li>
+            <li>Weight: {pokemonData.weight}</li>
+            <li>Base Happiness: {pokemonData.height}</li>
+            <li>Capture Rate: {pokemonData.weight}</li>
+          </div>
           <div className="Card--description-container">
-            <h2>POKEDEX ENTRY</h2>
+            <h2>Pokedex entry</h2>
             <p className="Card-description">{pokemonData.description}</p>
           </div>
         </div>
-        <button onClick={() => {this.props.callbackFromParent(pokemonData.pokemon_id+1)}} className="Card-btnNav Card-btnForward"><FontAwesome name="caret-right" size="3x"/></button>
-      </div>
-    );
+        <button onClick={() => {
+            this.props.callbackFromParent(pokemonData.pokemon_id + 1);
+          }} className="Card-btnNav Card-btnForward">
+          <FontAwesome name="caret-right" size="3x" />
+        </button>
+      </div>;
   }
 }
 

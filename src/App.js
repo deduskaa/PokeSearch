@@ -17,17 +17,21 @@ class App extends Component {
 
   myCallback = (dataFromChild) => {
     this.searchPokemon(dataFromChild);
-    console.log(this.state);
   }
 
   setPokemonData = data => {
+    console.log(data);
+    
     let pokemon = {
       pokemon_id: data.id,
       pokemon: data.name,
       types: data.types.map((d) => {return d.type.name}).reverse(),
       picture: data['sprites']['front_default'],
       species_url: data.species.url,
-      stats: data.stats
+      stats: data.stats,
+      height: data.height,
+      weight: data.weight,
+      happiness: data.base_happiness,
     }
     caches.open('pokemon').then( cache => {
       let request = new Request(pokemon.species_url);
@@ -46,6 +50,8 @@ class App extends Component {
         } else {
           response.json()
           .then(data => {
+            console.log(data);
+            
             this.setAdditionalPokemonData(data, pokemon);
           });
         }
@@ -54,8 +60,9 @@ class App extends Component {
   }
 
   setAdditionalPokemonData = (data, pokemon) => {
-    console.log(data);
     pokemon.genus = data.genera[2]['genus'];
+    pokemon.capture_rate = data.capture_rate;
+    
     //Loop through descriptions and search for the first english one
     for (let i = 0; i < data['flavor_text_entries'].length; i++) {
       if (data['flavor_text_entries'][i]['language']['name'] === 'en') {

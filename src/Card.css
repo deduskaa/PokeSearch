@@ -25,7 +25,7 @@
   width: 100%;
   height: 5rem;
   padding: .5rem 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #fff;
 
   flex:0 0 auto;
@@ -50,6 +50,7 @@
 
 .Card-genus {
   margin: 0 auto 0 .4rem;
+  font-size: .9rem;
 }
 
 .Card-id::before {
@@ -63,8 +64,8 @@
 }
 
 .Card--type-container {
-  width: 10rem;
-  margin: .8rem auto 2rem 2rem;
+  width: 9.5rem;
+  margin: .8rem auto 2rem 1.8rem;
 
   align-self: flex-start;
   display: flex;
@@ -95,7 +96,8 @@
 
 .Card--description-container {
   background-color: white;
-  padding: 1rem 2rem;
+  padding: 2rem 2rem 1rem;
+  margin-top: 1rem;
   width: 100%;
 
   align-self: flex-end;
@@ -103,20 +105,24 @@
 }
 
 .Card--description-container h2 {
-  font-size: 1.5rem;
-  margin: 0 0 .8rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin: 0;
 }
 
 .Card-description {
-  font-size: .8rem;
+  font-size: 1rem;
+  margin-top: .5rem;
 }
 
 .Card--stats-container {
   width: 14rem;
   height: 8rem;
-  margin:0;
-  vertical-align: top;
+  margin: 0;
   -webkit-padding-start: 0;
+
+  align-self: center;
 }
 
 .Card--stats-container li {
@@ -124,6 +130,17 @@
   justify-content: space-between;
   margin: 0;
   font-variant: small-caps;
+  list-style-type: none;
+}
+
+.Card-additional-info-container {
+  width: 17rem;
+  font-variant: small-caps;
+  padding: 0 1.5rem 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   list-style-type: none;
 }
 
