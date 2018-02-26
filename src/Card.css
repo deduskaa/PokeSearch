@@ -1,3 +1,9 @@
+.Card-container {
+  position: relative;
+  width: 30rem;
+  margin: auto;
+}
+
 .Card {
   /* background: linear-gradient(to bottom, rgba(231,56,39,1) 0%, rgba(231,56,39,1) 53%, rgba(255,255,255,1) 53%, rgba(255,255,255,1) 100%); */
   /* background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(231, 56, 39, 1) 47%, rgba(231, 56, 39, 1) 100%); */
@@ -43,7 +49,7 @@
 }
 
 .Card-genus {
-  margin-right: auto;
+  margin: 0 auto 0 .4rem;
 }
 
 .Card-id::before {
@@ -135,11 +141,11 @@
 }
 
 .Card-btnBack {
-  left: 0;
+  left: -3rem;
 }
 
 .Card-btnForward {
-  right: 0;
+  right: -3rem;
   color: rgba(231,56,39,1);
 }
 

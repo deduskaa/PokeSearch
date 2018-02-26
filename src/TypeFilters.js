@@ -8,7 +8,8 @@ class TypeFilters extends Component {
     this.state = {
       types: null,
       pokemonsFromFilter: null,
-      gotDataFromFilterSearch: false
+      gotDataFromFilterSearch: false,
+      hideResults: false
     };
   }
 
@@ -32,7 +33,7 @@ class TypeFilters extends Component {
               let types = data.results.map((typeObj) => {
                 return typeObj.name;
               });
-              this.setState(types);
+              this.setState({ types: types });
             });
           });
         } else {
@@ -50,6 +51,7 @@ class TypeFilters extends Component {
 
   searchPokemon = (event) => {
     this.props.callbackFromParent(event.target.id);
+    this.setState({hideResults: true});
   }
 
   componentDidMount() {
@@ -71,7 +73,7 @@ class TypeFilters extends Component {
           {typeElems}
         </div>
         <div className="TypeFilters-results">
-          {pokemonsFromFilter}
+          {this.state.hideResults ? '' : pokemonsFromFilter}
         </div>
       </div>
     );
