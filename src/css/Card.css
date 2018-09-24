@@ -1,180 +1,172 @@
 .Card-container {
-  position: relative;
-  width: 30rem;
-  margin: auto;
+    margin: auto;
+    position: relative;
+    width: 30rem;
 }
 
 .Card {
-  /* background: linear-gradient(to bottom, rgba(231,56,39,1) 0%, rgba(231,56,39,1) 53%, rgba(255,255,255,1) 53%, rgba(255,255,255,1) 100%); */
-  /* background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(231, 56, 39, 1) 47%, rgba(231, 56, 39, 1) 100%); */
-  color: #222224;
-  width: 30rem;
-  min-height: 30rem;
-  margin: 1rem auto;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    color: #222224;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem auto;
+    min-height: 30rem;
+    position: relative;
+    width: 30rem;
 }
 
 .Card--title-container {
-  position: relative;
-  width: 100%;
-  height: 5rem;
-  padding: .5rem 2rem;
-  margin-bottom: 2rem;
-  color: #fff;
-
-  flex:0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex: 0 0 auto;
+    height: 5rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0.5rem 2rem;
+    position: relative;
+    width: 100%;
 }
 
 .Card-title {
-  order: 0;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  margin: 0;
+    font-size: 1.4rem;
+    margin: 0;
+    order: 0;
+    text-transform: uppercase;
 }
 
 .Card-id {
-  order: 2;
-  margin-left: 1.2rem;
-  position: relative;
-  display: inline-block;
+    display: inline-block;
+    margin-left: 1.2rem;
+    order: 2;
+    position: relative;
 }
 
 .Card-genus {
-  margin: 0 auto 0 .4rem;
-  font-size: .9rem;
+    margin: 0 auto 0 0.4rem;
+    font-size: 0.9rem;
 }
 
 .Card-id::before {
-  content: '';
-  width: 1.2rem;
-  height: 1.2rem;
-  background-image: url('../img/content/pokeball.png');
-  background-size: cover;
-  position: absolute;
-  left: -1.5rem;
+    background-image: url('../img/content/pokeball.png');
+    background-size: cover;
+    content: '';
+    height: 1.2rem;
+    left: -1.5rem;
+    position: absolute;
+    width: 1.2rem;
 }
 
 .Card--type-container {
-  width: 9.5rem;
-  margin: .8rem auto 2rem 1.8rem;
-
-  align-self: flex-start;
-  display: flex;
-  justify-content: space-around;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.8rem auto 2rem 1.8rem;
+    width: 9.5rem;
 }
 
 .Card-type {
-  display: inline-block;
-  border: .1rem solid black;
-  border-radius: 1rem;
-  color: #fff;
-  padding: .15rem .25rem;
-  font-size: .8rem;
-  font-weight: 600;
-  font-variant: small-caps;
+    border-radius: 1rem;
+    border: 0.1rem solid black;
+    color: #fff;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-variant: small-caps;
+    font-weight: 600;
+    padding: 0.15rem 0.25rem;
 }
 
 .Card--image-container {
-  background-color: white;
-  box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.2);
-  width: 10rem;
-  height: 10rem;
+    background-color: white;
+    box-shadow: 1px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    height: 10rem;
+    width: 10rem;
 }
 
 .Card--image-container img {
-  height: 100%;
+    height: 100%;
 }
 
 .Card--description-container {
-  background-color: white;
-  padding: 2rem 2rem 1rem;
-  margin-top: 1rem;
-  width: 100%;
-
-  align-self: flex-end;
-  flex: 0 0 auto;
+    align-self: flex-end;
+    background-color: white;
+    flex: 0 0 auto;
+    margin-top: 1rem;
+    padding: 2rem 2rem 1rem;
+    width: 100%;
 }
 
 .Card--description-container h2 {
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  font-weight: normal;
-  margin: 0;
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .Card-description {
-  font-size: 1rem;
-  margin-top: .5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }
 
 .Card--stats-container {
-  width: 14rem;
-  height: 8rem;
-  margin: 0;
-  -webkit-padding-start: 0;
-
-  align-self: center;
+    -webkit-padding-start: 0;
+    align-self: center;
+    height: 8rem;
+    margin: 0;
+    width: 14rem;
 }
 
 .Card--stats-container li {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  font-variant: small-caps;
-  list-style-type: none;
+    display: flex;
+    font-variant: small-caps;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
 }
 
 .Card-additional-info-container {
-  width: 17rem;
-  font-variant: small-caps;
-  padding: 0 1.5rem 1rem;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-variant: small-caps;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0 1.5rem 1rem;
+    width: 17rem;
 }
 
 .Card-btnNav {
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  height: 3rem;
-  width: 3rem;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  background-color: transparent;
-  color: white;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    height: 3rem;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 3rem;
 }
 
 .Card-btnBack {
-  left: -3rem;
+    left: -3rem;
 }
 
 .Card-btnForward {
-  right: -3rem;
-  color: rgba(231,56,39,1);
+    color: rgba(231, 56, 39, 1);
+    right: -3rem;
 }
 
 .Card-btnAddToList {
-  position: absolute;
-  z-index: 1;
-  right: -.5rem;
-  top: -.5rem;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(231,56,39,1);
-  color: #fff;
-  width: 1.8rem;
-  height: 1.8rem;
+    background-color: rgba(231, 56, 39, 1);
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    height: 1.8rem;
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+    width: 1.8rem;
+    z-index: 1;
 }

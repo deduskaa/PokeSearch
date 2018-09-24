@@ -3,11 +3,11 @@ import '../css/Type.css';
 
 const Type = props => {
     const searchPokemonByType = event => {
-        const url = 'https://pokeapi.co/api/v2/type/' + event.target.id;
+        const url = `https://pokeapi.co/api/v2/type/${event.target.id}/`;
         const request = new Request(url);
         fetch(request).then(response => {
             response.json().then(data => {
-                let pokemons = data.pokemon.map(pokeObj => {
+                const pokemons = data.pokemon.map(pokeObj => {
                     return pokeObj.pokemon.name;
                 });
                 props.callbackFromParent(pokemons);

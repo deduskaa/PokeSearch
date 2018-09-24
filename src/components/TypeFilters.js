@@ -22,10 +22,11 @@ class TypeFilters extends Component {
         const request = new Request(url);
         fetch(request).then(response => {
             response.json().then(data => {
-                let types = data.results.map(typeObj => {
-                    return typeObj.name;
-                });
-                this.setState({ types: types });
+                const types = data.results
+                    .map(typeObj => typeObj.name)
+                    // splice last two empty types
+                    .splice(0, data.results.length - 2);
+                this.setState({ types });
             });
         });
     };
@@ -54,18 +55,16 @@ class TypeFilters extends Component {
 
         const pokemonsFromFilter =
             gotDataFromFilterSearch &&
-            filteredPokemons.map(pokemon => {
-                return (
-                    <button
-                        onClick={this.searchPokemon}
-                        key={pokemon}
-                        id={pokemon}
-                        className="TypeFilter-pokeBtn"
-                    >
-                        {pokemon}
-                    </button>
-                );
-            });
+            filteredPokemons.map(pokemon => (
+                <button
+                    onClick={this.searchPokemon}
+                    key={pokemon}
+                    id={pokemon}
+                    className="TypeFilter-pokeBtn"
+                >
+                    {pokemon}
+                </button>
+            ));
 
         return (
             <div className="TypeFilters">

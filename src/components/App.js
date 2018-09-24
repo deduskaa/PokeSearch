@@ -62,12 +62,11 @@ class App extends Component {
     };
 
     searchPokemon = pokemonID => {
-        const url = 'https://pokeapi.co/api/v2/pokemon/' + pokemonID;
+        const url = `https://pokeapi.co/api/v2/pokemon/${pokemonID}/`;
         const request = new Request(url);
         this.setState({ loading: true });
         fetch(request).then(response => {
             response.json().then(data => {
-                console.log(data);
                 this.setPokemonData(data);
             });
         });

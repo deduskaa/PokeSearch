@@ -30,7 +30,9 @@ class SearchBar extends Component {
                 {this.props.loading ? (
                     <FontAwesome name="spinner" spin />
                 ) : (
-                    <input type="submit" value="Submit" />
+                    <button type="submit" value="Search">
+                        <FontAwesome name="search" />{' '}
+                    </button>
                 )}
             </form>
         );
